@@ -12,6 +12,14 @@ with the numbers public rather than quietly.
 
 ### what's public here
 
+- **[cultural-archaeology](https://github.com/rafaelcarlosabbariao/cultural-archaeology)** —
+  *WhatTheFad?*, live at [whatthefad.netlify.app](https://whatthefad.netlify.app). ask why a trend
+  exists and it traces the thing backward: when it appeared, how it spread, what conditions made the
+  ground fertile. every analysis runs the same three moves — decode the sign, name the code, expose
+  the gap between what the trend promises and what the system actually delivers. the gap is the
+  insight; the rest is supporting evidence. a flattering read means the third move didn't finish.
+  five-lens report, cellular-automata diffusion sim, and a positioning-audit pipeline where every
+  claim binds to a receipt id.
 - **[reins](https://github.com/rafaelcarlosabbariao/reins)** — clinical-trial resourcing analytics
   in pure python (reflex · pandas · plotly). every kpi on screen is a reactive computation over one
   in-memory model rather than a stored figure, so changing a filter recomputes the whole board.
