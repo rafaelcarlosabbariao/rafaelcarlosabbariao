@@ -1,62 +1,81 @@
 ## Rafael Carlos Abbariao
 
-data scientist in new york. seven years at Pfizer — vaccine research informatics, then clinical
-supply, where a demand model I built replaced a vendor product. now running **Back2Human**: a studio
-in two halves, instruments that read how people actually behave and the things built on what they
-read.
+data scientist in new york. i build instruments that measure how people actually behave, then
+publish the number — including when the number ends the product.
 
-the method is the same everywhere. instrument it, publish the number, let the number end the
-argument. sometimes the number ends the product — [Supp](https://whatssupp.app) reached 51 friend
-groups and 5,039 answered prompts, activated 1.7% of the people who installed it, and got sunset
-with the numbers public rather than quietly.
+### whatthefad? — a cultural archaeology engine
 
-### what's public here
+**[cultural-archaeology](https://github.com/rafaelcarlosabbariao/cultural-archaeology)** · live at
+**[whatthefad.netlify.app](https://whatthefad.netlify.app)**
 
-- **[cultural-archaeology](https://github.com/rafaelcarlosabbariao/cultural-archaeology)** —
-  *WhatTheFad?*, live at [whatthefad.netlify.app](https://whatthefad.netlify.app). ask why a trend
-  exists and it traces the thing backward: when it appeared, how it spread, what conditions made the
-  ground fertile. every analysis runs the same three moves — decode the sign, name the code, expose
-  the gap between what the trend promises and what the system actually delivers. the gap is the
-  insight; the rest is supporting evidence. a flattering read means the third move didn't finish.
-  five-lens report, cellular-automata diffusion sim, and a positioning-audit pipeline where every
-  claim binds to a receipt id.
+ask why a trend exists and it traces the thing backward: when it appeared, how it spread, what
+conditions made the ground fertile. every analysis runs the same three moves — decode the sign,
+name the code, expose the gap between what the trend promises and what the system actually
+delivers. the gap is the insight; the rest is supporting evidence. a flattering read means the
+third move didn't finish.
+
+```
+npm install     # netlify functions only — the site itself has no build step
+netlify dev     # site + functions at http://localhost:8888
+```
+
+**the hard part** was that one repo holds two apps with opposite threat models. the analyst view
+is bring-your-own-key: the Claude key lives in `localStorage` and calls go browser → Anthropic
+directly, so the deployment costs nothing to serve no matter who shows up. the Positioning Audit
+is the inverse — its staged prompts *are* the product, so both key and prompts stay server-side
+behind functions. i shipped both rather than pick one, because either choice alone loses
+something real.
+
+**what it still gets wrong:** the cellular-automata spread simulation is illustrative, not
+predictive. it renders a plausible diffusion regime; it does not forecast one.
+
+### the rest of the shelf
+
 - **[reins](https://github.com/rafaelcarlosabbariao/reins)** — clinical-trial resourcing analytics
-  in pure python (reflex · pandas · plotly). every kpi on screen is a reactive computation over one
-  in-memory model rather than a stored figure, so changing a filter recomputes the whole board.
-  runs in one command against a synthetic 27-trial portfolio.
+  in pure python (reflex · pandas · plotly). point it at a trial and it reads the resourcing
+  demand off that trial's own parameters. every kpi is a reactive computation over one in-memory
+  model rather than a stored figure, so changing a filter recomputes the whole board.
+  `pip install -r requirements.txt && reflex run`. every committed row is synthetic — a 27-trial,
+  18-resource portfolio with no real people or trials in it.
+- **[tiktok-service](https://github.com/rafaelcarlosabbariao/tiktok-service)** — small fastapi
+  wrapper pulling trending hashtags and sounds without paying a third party for the privilege.
+  `MS_TOKEN=... uvicorn app:app --reload`. the boring plumbing under a cultural signal feed, and
+  it fails the way unofficial APIs fail: the token expires, and cold starts run 30–60s.
 - **[sobrock_analysis](https://github.com/rafaelcarlosabbariao/sobrock_analysis)** — whether john
   mayer's *Sob Rock* is actually soft rock, put to spotify's audio features in R. a cultural
   question that turned out to have a testable shape.
-- **[tiktok-service](https://github.com/rafaelcarlosabbariao/tiktok-service)** — small fastapi
-  service pulling trending hashtags and sounds without paying a third party for the privilege. the
-  boring plumbing under a cultural signal feed.
+- **[whats-in-that-dijon](https://github.com/rafaelcarlosabbariao/whats-in-that-dijon)** — the same
+  move on dijon's production. what is in there, measured rather than described.
 
-### what isn't, and why
+### what didn't work
 
-most of the last year is private — client work, and products that aren't only mine to open.
+**Supp** was a prompt app for small friend groups — three questions a day, moving playful to
+personal. i shipped it, instrumented it, and it did not activate.
 
-the one i'd most want to show you is a clinical-supply simulator: each patient modeled as a markov
-chain walking dosing cycles, monte-carlo'd across the enrollment plan to turn enrollment uncertainty
-into a daily demand curve, then inventory rolled forward site by site under an (s,S) policy with lot
-expiry and lead times until something runs dry. it replaced a third-party product and saved up to
-$500k per study. the reason to forecast it isn't the money — a site running out means a patient
-misses a dose. ask and i'll walk you through it.
+- **116 profiles · 51 groups · 5,039 answers**, 2025-10-25 through 2026-06-07. nothing since.
+- **2 of 51 groups** ever reached three distinct responders inside a thirty-day window. **zero**
+  do today. that is the whole story: the loop never closed.
+- the exception is the interesting part. one group ran **1,003 answers across 8 responders and
+  127 active days over a 197-day span**. the product worked, intensely, for people who already
+  had the habit. it never manufactured the habit in anyone who didn't.
+- what people refused is legible too. skip rate was **2.9%** on questions about another member
+  and **5.3%** open-ended, against **24.2%** for photo and **32.6%** for audio. asking someone to
+  perform costs roughly an order of magnitude more than asking them to answer.
 
-also not in this list: [rafaelabbariao.com](https://rafaelabbariao.com), a portfolio built as a
-windows 98 mockup running a sql engine i wrote by hand in typescript — tokenizer, parser, evaluator
-— over my own résumé as the database. querying a person is a strange thing to build. worth it
-anyway.
+i wrote a growth plan that assumed a working activation loop, then a second one, before checking
+whether the loop worked. it didn't — and the numbers that disproved it were already sitting in
+the database. that is the part i actually carry: instrument the assumption before you fund it.
 
 ### currently
 
-**theGOSSIP**, the measurement half — [Audience Decode](https://peoplewatching.studio) builds a
-working model of an audience so you can test a move on it before you spend, and
-[readtheloom.live](https://readtheloom.live) reads the present out loud from nine live source kinds
-scored across eight cultural domains.
+**Back2Human**, in two halves. the measurement half is
+[Audience Decode](https://peoplewatching.studio), which builds a working model of an audience so
+you can test a move on it before you spend, and [readtheloom.live](https://readtheloom.live),
+which reads the present out loud from nine live source kinds scored across eight cultural
+domains. the built half is what those reads turn into.
 
-**the built half** — [Supp](https://whatssupp.app), and then
-[Close Friends Only](https://closehumans.com) when supp taught us the group chat was the
-distribution and not the destination.
+seven years at Pfizer before that — vaccine research informatics, then clinical supply, where a
+patient-level demand simulator i built replaced a third-party forecasting product.
 
 ---
 
