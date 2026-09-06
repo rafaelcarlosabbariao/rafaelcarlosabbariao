@@ -1,7 +1,8 @@
 ## Rafael Carlos Abbariao
 
-data scientist in new york. i build instruments that measure how people actually behave, then
-publish the number — including when the number ends the product.
+lead data scientist, cultural intelligence, at **Back2Human** in new york. i build instruments
+that measure how people actually behave, then publish the number — including when the number ends
+the product.
 
 ### whatthefad? — a cultural archaeology engine
 
@@ -69,10 +70,10 @@ the database. that is the part i actually carry: instrument the assumption befor
 ### currently
 
 **Back2Human**, in two halves. the measurement half is
-[Audience Decode](https://peoplewatching.studio), which builds a working model of an audience so
-you can test a move on it before you spend, and [readtheloom.live](https://readtheloom.live),
-which reads the present out loud from nine live source kinds scored across eight cultural
-domains. the built half is what those reads turn into.
+[Audience Decode](https://thegossip.io/decode/six-layers), which builds a working model of an
+audience so you can test a move on it before you spend, and
+[readtheloom.live](https://readtheloom.live), which reads the present out loud from nine live
+source kinds scored across eight cultural domains. the built half is what those reads turn into.
 
 seven years at Pfizer before that — vaccine research informatics, then clinical supply, where a
 patient-level demand simulator i built replaced a third-party forecasting product.
