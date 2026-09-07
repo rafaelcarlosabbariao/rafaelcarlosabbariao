@@ -1,8 +1,8 @@
 ## Rafael Carlos Abbariao
 
-lead data scientist, cultural intelligence, at **Back2Human** in new york. i build instruments
-that measure how people actually behave, then publish the number — including when the number ends
-the product.
+founder and maintainer of **gossip**, an open-source social intelligence project, and research
+lead at **Back2Human** in new york. i build instruments that measure how people actually behave,
+then publish the number — including when the number ends the product.
 
 ### whatthefad? — a cultural archaeology engine
 
@@ -69,11 +69,14 @@ the database. that is the part i actually carry: instrument the assumption befor
 
 ### currently
 
-**Back2Human**, in two halves. the measurement half is
-[Audience Decode](https://thegossip.io/decode/six-layers), which builds a working model of an
-audience so you can test a move on it before you spend, and
-[readtheloom.live](https://readtheloom.live), which reads the present out loud from nine live
-source kinds scored across eight cultural domains. the built half is what those reads turn into.
+two things, deliberately kept apart. **gossip** is the open-source one, held by its own
+operating entity so ownership of an open project stays separable from the ventures that read it:
+[Audience Decode](https://thegossip.io/decode/six-layers) builds a working model of an audience so
+you can test a move on it before you spend, and [readtheloom.live](https://readtheloom.live) reads
+the present out loud from nine live source kinds scored across eight cultural domains.
+
+**Back2Human** is a separate social health venture i co-founded and run with a partner, now
+recalibrating into an applied think tank and research service on human infrastructure.
 
 seven years at Pfizer before that — vaccine research informatics, then clinical supply, where a
 patient-level demand simulator i built replaced a third-party forecasting product.
